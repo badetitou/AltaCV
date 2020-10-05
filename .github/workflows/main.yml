@@ -76,7 +76,12 @@ jobs:
         run: mv sample.pdf cv.pdf
       
       - name: Create empty changelog
-        run: echo "# Update CV" > CHANGELOG.md
+        run: |
+          cat > CHANGELOG.md << EndOfMessage
+          # Update CV
+          
+          The pdf is updated automatically
+          EndOfMessage
         
       - name: Update Release
         # You may pin to the exact commit or the version.
