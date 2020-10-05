@@ -14,3 +14,7 @@ sample.run.xml
 sample.bbl
 
 sample.blg
+sample.log
+sample.fls
+sample.fdb_latexmk
+sample.pdf
