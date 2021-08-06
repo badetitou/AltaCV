@@ -37,13 +37,13 @@ jobs:
           # LaTeX engine to be used
           # compiler: pdflatex # optional, default is latexmk
           # Extra arguments to be passed to the latex compiler
-          args: -interaction=nonstopmode -file-line-error -auxdir=./out/ -outdir=./out/ -pdf cv.pdf
+          args: -interaction=nonstopmode -file-line-error -auxdir=./out/ -outdir=./out/ -pdf
           # Install extra packages by apt-get
           # extra_system_packages: # optional
 
                         
       - name: Rename pdf
-        run: mv ./out/cv.pdf cv.pdf
+        run: mv ./out/sample.pdf cv.pdf
       
       - name: Create empty changelog
         run: |
