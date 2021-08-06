@@ -43,7 +43,7 @@ jobs:
 
                         
       - name: Rename pdf
-        run: mv ./out/sample.pdf cv.pdf
+        run: cp ./out/sample.pdf ./cv.pdf
       
       - name: Create empty changelog
         run: |
