@@ -37,7 +37,7 @@ jobs:
           # LaTeX engine to be used
           # compiler: pdflatex # optional, default is latexmk
           # Extra arguments to be passed to the latex compiler
-          args: -f -interaction=nonstopmode -file-line-error -jobname=cv -auxdir=./out/ -outdir=./out/
+          args: -interaction=nonstopmode -file-line-error -jobname=cv -auxdir=./out/ -outdir=./out/
           # Install extra packages by apt-get
           # extra_system_packages: # optional
 
