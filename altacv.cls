@@ -36,15 +36,9 @@
 \ProcessOptions\relax
 
 \LoadClass{article}
-%% v1.3.2 Hopefully this helps make the PDF
-%% file more 'friendly' with copy-paste etc
-\RequirePackage{fixpdfx}
+
+\RequirePackage{etoolbox}
 \RequirePackage[a-1b]{pdfx}
-%% v1.3.3 Temporary fix for pdfx and biblatex incompatibility
-%% (Thanks to @badetitou for highlighting this issue)
-%% https://github.com/plk/biblatex/issues/1044
-%% Will be removed when fix is released in biblatex 3.16
-% \catcode30=12
 \RequirePackage{accsupp}
 \RequirePackage[margin=2cm]{geometry}
 \RequirePackage[fixed]{fontawesome5}
