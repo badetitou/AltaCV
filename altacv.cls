@@ -315,6 +315,12 @@
   }\EndAccSupp{}\par%
 }
 
+\newcommand{\cvskilltext}[2]{%
+  \textcolor{emphasis}{\textbf{#1}}\hfill
+  #2
+  \par%
+}
+
 % Adapted from @Jake's answer at http://tex.stackexchange.com/a/82729/226
 \newcommand{\wheelchart}[4][0]{%
     \begingroup\centering
