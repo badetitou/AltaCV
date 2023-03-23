@@ -67,6 +67,10 @@
 %% sample.bib contains your publications
 \addbibresource{sample.bib}
 
+% badetitou command
+\newcommand{\rmod}{Inria RMoD}
+\newcommand{\bl}{Berger-Levrault}
+
 \begin{document}
 \name{Beno{\^\i}t Verhaeghe}
 \tagline{Docteur en Génie Logiciel}
@@ -101,8 +105,8 @@
 
 \cvevent{Ingénieur de Recherche -- Ph.D.}{Berger-Levrault}{Novembre 2021 -- Aujourd'hui}{Lyon, FRANCE}
 \begin{itemize}
-  \item Migration d'applications (Projets Casino -- IDM)
-  \item Analyse de la qualité des applications de l'entreprise (Moose/IDM)
+  \item Migration d'applications (Projets Casino -- MDE)
+  \item Analyse de la qualité des applications de l'entreprise (Moose/MDE)
   \item Encadrement de doctorants et de stagiaires
   \item Écriture de papiers de recherche
   \item Suivi du contrat cadre signé entre Berger-Levrault et Inria
@@ -110,7 +114,7 @@
 
 \divider
 
-\cvevent{Doctorant Génie Logiciel}{Berger-Levrault/Inria RMoD}{Janvier 2019 -- Octobre 2021}{Montpellier/Lille, FRANCE}
+\cvevent{Doctorant Génie Logiciel}{Inria RMoD -- Berger-Levrault}{Janvier 2019 -- Octobre 2021}{Montpellier/Lille, FRANCE}
 \begin{itemize}
   \item Migration d'applications GWT vers Angular
   \item Mise en place d'architecture hybride
@@ -128,7 +132,7 @@
 
 \divider
 
-\cvevent{Etudiant-Chercheur}{RMoD - Inria Lille Nord Europe}{Mai -- Septembre 2017}{Villeneuve d'Ascq, France}
+\cvevent{Etudiant-Chercheur}{Inria RMoD}{Mai -- Septembre 2017}{Villeneuve d'Ascq, France}
 
 
 \cvsection{Projets}
@@ -143,8 +147,9 @@
 
 \cvevent{Casino}{Inria RMoD}{Février 2018 -- Aujourd'hui}{Lille, FRANCE}
 
-- Outil utilisant l'IDM permettant la migration d'application
-
+\begin{itemize}
+\item Outil utilisant l'IDM permettant la migration d'application
+\end{itemize}
   
 \switchcolumn
 
@@ -178,7 +183,7 @@
 \cvtag{Angular}
 \cvtag{GWT}
 \cvtag{Spring}
-\cvtag{C}
+\cvtag{REST}
 
 \cvsection{Formation}
 
@@ -205,6 +210,11 @@ Formation centrée sur le le génie logiciel et les analyses statistiques (Data 
 
 \cvskilltext{Anglais}{Ecrit et parlé}
 
+\cvsection{Hobbies}
+
+\cvtag{Jeux de sociétés}
+\cvtag{Contributeur Open-Source}
+
 \end{paracol}
 
 \newpage
@@ -223,16 +233,17 @@ Formation centrée sur le le génie logiciel et les analyses statistiques (Data 
 \end{itemize}
 
 Suite à ma thèse, l'entreprise Berger-Levrault et l'Inria ont signé un contrat cadre (\href{https://www.inria.fr/fr/berger-levrault-inria-partenariat-numerique-responsable}{\color{blue}\underline{post inria}}).
-Je suis donc resté en poste chez Berger-Levrault en tant qu'ingénieur de recherche afin de poursuivre les travaux de migration de logiciel, et de suivre les doctorants qui découlent de ce contrat cadre.
+Je suis donc resté en poste à Berger-Levrault en tant qu'ingénieur de recherche afin de poursuivre les travaux de migration de logiciel, et d'encadrer les doctorants qui découlent de ce contrat cadre.
+J'ai aussi lancer en interne un projet d'analyse des logiciels de l'entreprise en utilisant la platforme de méta-modèlisation Moose.
 
 \divider
 
-\cvevent{Doctorant Génie Logiciel}{Berger-Levrault/Inria RMoD}{Janvier 2019 -- Octobre 2021}{Montpellier/Lille, FRANCE}
+\cvevent{Doctorant Génie Logiciel}{Inria RMoD -- Berger-Levrault}{Janvier 2019 -- Octobre 2021}{Montpellier/Lille, FRANCE}
 \begin{itemize}
 \item Migration d'applications GWT vers Angular
 \item Mise en place d'architecture hybride
 \item Écriture de papiers de recherche
-\item Enseignement théorie des modèles
+\item Enseignements
 \item Écriture de blog post sur la platforme Moose
 \begin{itemize}
   \item \url{https://modularmoose.org/2022/10/27/test-your-moose-code-using-ci.html}
@@ -253,25 +264,25 @@ Je suis donc resté en poste chez Berger-Levrault en tant qu'ingénieur de reche
 
 \divider
 
-\cvevent{Etudiant-Chercheur}{RMoD - Inria Lille Nord Europe}{Mai -- Septembre 2017}{Villeneuve d'Ascq, France}
+\cvevent{Etudiant-Chercheur}{Inria RMoD}{Mai -- Septembre 2017}{Villeneuve d'Ascq, France}
 \begin{itemize}
-  \item Développement en Pharo d'un "spy" (TestsUsageAnalyser)
+  \item Développement en Pharo d'un "espion" (\href{https://badetitou.fr/projects/TUA/}{\color{blue}\underline{TestsUsageAnalyser}})
   \item Ecriture d'un article scientifique pour l'IWST
-  \item Développement d'un outil de sélection de tests (SmartTest)
+  \item Développement d'un outil de sélection de tests (\href{https://badetitou.fr/projects/SmartTest/}{\color{blue}\underline{SmartTest}})
 \end{itemize}
 
 \divider
 
 \cvevent{Developpeur Informatique}{University of Emden,  Departement Computer Science}{Avril -- Juillet 2015}{Emden, Allemagne}
 \begin{itemize}
-  \item Développement de l'application "Factory Interface"
+  \item Développement de l'application "Factory Interface" permettant d'utiliser le protocol OPC-UA depuis une application Java
 \end{itemize}
 
 \newpage
 
 \cvsection{Projets}
 
-\cvevent{Pharo Language Server}{}{Décembre 2021 -- 2023}{Grenoble, FRANCE}
+\cvevent{Pharo Language Server}{Projet personnel}{Décembre 2021 -- 2023}{Grenoble, FRANCE}
 \begin{itemize}
 \item Connecter Pharo avec VSCode
 \item +21 étoiles GitHub
@@ -287,7 +298,7 @@ Il est disponible sur GitHub.
 
 \divider
 
-\cvevent{Pharo LibVLC }{}{}{}
+\cvevent{Pharo LibVLC }{Projet personnel}{}{}
 
 \href{https://github.com/badetitou/Pharo-LibVLC}
 {\color{blue}\underline{Pharo LibVLC}} est un binding FFI de la librairie de VLC avec Pharo.
@@ -340,10 +351,9 @@ Il est disponible sur GitHub.
 
 \cvsection{Enseignements}
 
-\cvevent{Architectures Logicielles}{Polytech'Lille}{2019 -- 2021}{Lille, FRANCE}
+\teachingevent{Architectures Logicielles}{Polytech'Lille}{2019 -- 2021}{Lille, FRANCE}{75h}
 
 \begin{itemize}
-\item \faClock 75 heures
 \item 2ème année d'école d'ingénieur (Master 1)
 \end{itemize}
 
@@ -353,9 +363,8 @@ L'objectif de cet enseignement était de faire découvrir les architectures 3-ti
 
 \divider
 
-\cvevent{Structures de données}{Polytech'Lille}{2019}{Lille, FRANCE}
+\teachingevent{Structures de données}{Polytech'Lille}{2019}{Lille, FRANCE}{12h}
 \begin{itemize}
-\item \faClock 12 heures
 \item 1er année d'école d'ingénieur (Licence 3)
 \end{itemize}
 
@@ -364,26 +373,25 @@ L'objectif était de faire développer et manipuler les structures de données e
 En cas d'exemple, nous avons aussi demandé aux étudiants d'utiliser les structures de données afin de résoudre des problèmes venus de la thèorie des graphes.
 
 \divider
+\pagebreak
 
-\cvevent{Système d'exploitation}{Universit\'e de Montpellier}{2020}{Montpellier, FRANCE}
-
+\teachingevent{Système d'exploitation}{Universit\'e de Montpellier}{2020}{Montpellier, FRANCE}{40h}
 \begin{itemize}
-  \item \faClock 40 heures
   \item Licence 2
   \item Support : \url{https://badetitou.fr/teaching/mtp/HLIN303/}
 \end{itemize}
-
-J'ai suivi une trentaine d'étudiants pendant dix séances TPs de 4 heures pour les accompagner dans les apprentissages liés au système d'exploitation.
+J'ai encadré une trentaine d'étudiants pendant dix séances TPs de 4 heures pour les accompagner dans les apprentissages liés au système d'exploitation.
 Ces enseignements visés à enseigner les languages de programmation C et Python.
 En particulier, l'objectif était de faire comprendre le fonctionnement de la compilation séparée,
 les différentes structures de données
 et du fonctionnement du système d'entrées et sorties d'une application.
 
+
 \divider
 
-\cvevent{Evolution et restructuration de logiciels}{Universit\'e de Montpellier}{2019 -- 2020}{Montpellier, FRANCE}
+\teachingevent{Evolution et restructuration de logiciels}{Universit\'e de Montpellier}{2019 -- 2020}{Montpellier, FRANCE}{16h}
+
 \begin{itemize}
-\item \faClock 16h
 \item Master 2
 \item Support TP : \url{https://badetitou.fr/teaching/mtp/VisuRCA/}
 \end{itemize}
@@ -394,9 +402,9 @@ Les étudiants ont pu découvrir le language de programmation Pharo, la platform
 
 \divider
 
-\cvevent{Fondamentaux architectures et systèmes d’exploitatio}{Polytech'Montpellier}{2020}{Montpellier, FRANCE}
+\teachingevent{Fondamentaux architectures et systèmes d’exploitatio}{Polytech'Montpellier}{2020}{Montpellier, FRANCE}{2h}
+
 \begin{itemize}
-\item \faClock 2h
 \item 1er année d'école d'ingénieur (Licence 3)
 \end{itemize}
 
@@ -405,13 +413,13 @@ En particulier, leurs fonctionnement, comment utiliser les \textit{fork}, lister
 
 \divider
 
-\cvevent{Architectures et Systèmes appliqués à l’IOT}{Polytech'Montpellier}{2020}{Montpellier, FRANCE}
+\teachingevent{Architectures et Systèmes appliqués à l’IOT}{Polytech'Montpellier}{2020}{Montpellier, FRANCE}{17h}
+
 \begin{itemize}
-  \item \faClock 17h
   \item 1er année d'école d'ingénieur (Licence 3)
 \end{itemize}
 
-Durant cet enseignement j'ai suivi des étudiants pendant leurs découvertes de la programmation Python pour controler un Arduino.
+Durant cet enseignement j'ai encadré des étudiants pendant leurs découvertes de la programmation Python pour controler un Arduino.
 J'ai dans un premier temps fait l'enseignement des TPs, puis le suivi de projet et enfin l'évaluation des projets.
 
 %% Yeah I didn't spend too much time making all the
@@ -440,6 +448,7 @@ Franck Barbier -- Professeur -- Université de Pau et des Pays de l’Adour
 
 \divider
 
+\pagebreak
 \cvevent{Ingénieur Informatique et Statistique}{Polytech Lille}{Septembre 2015 -- Juillet 2018}{}
 
 \textbf{Projet de fin d'étude :} Migration : GWT to Angular\\
@@ -451,17 +460,12 @@ Franck Barbier -- Professeur -- Université de Pau et des Pays de l’Adour
 
 % \divider
 
-\cvsection{Hobbies}
+% \cvevent{Archlinux Pharo Launcher}{}{}{}
 
-\cvevent{Le Club Info -- Président}{Polytech Lille}{2016 -- 2018}{}
+% \divider
 
-\divider
+% \cvevent{Tennis de table -- Trésorier}{Lezennes, FRANCE}{2016 -- 2018}{}
 
-\cvevent{Tennis de table -- Trésorier}{Lezennes, FRANCE}{2016 -- 2018}{}
-
-\divider
-
-\cvevent{Recherche Historique -- Secrétaire}{CRHL Lezennes, FRANCE}{2014 -- février 2018}{}
 
 
 % \cvsection{Referees}
