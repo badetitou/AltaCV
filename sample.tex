@@ -1,38 +1,33 @@
-%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+%%%%%%%%%%%%%%%%%
+% AltaCV - Version FR (revu)
+%%%%%%%%%%%%%%%%
+
 % \documentclass[10pt,a4paper,normalphoto]{altacv}
-
 \documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
-%% AltaCV uses the fontawesome5 and packages.
-%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
 
-% Change the page layout if you need to
 \geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
 
-% The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
 
-% Change the font if you want to, depending on whether
-% you're using pdflatex or xelatex/lualatex
 \ifxetexorluatex
-  % If using xelatex or lualatex:
   \setmainfont{Roboto Slab}
   \setsansfont{Lato}
   \renewcommand{\familydefault}{\sfdefault}
 \else
-  % If using pdflatex:
   \usepackage[rm]{roboto}
   \usepackage[defaultsans]{lato}
-  % \usepackage{sourcesanspro}
   \renewcommand{\familydefault}{\sfdefault}
 \fi
 
-% Change the colours if you want to
 \definecolor{SlateGrey}{HTML}{2E2E2E}
 \definecolor{LightGrey}{HTML}{666666}
 \definecolor{DarkPastelRed}{HTML}{450808}
 \definecolor{PastelRed}{HTML}{8F0D0D}
 \definecolor{GoldenEarth}{HTML}{E7D192}
+
 \colorlet{name}{black}
 \colorlet{tagline}{PastelRed}
 \colorlet{heading}{DarkPastelRed}
@@ -42,47 +37,39 @@
 \colorlet{emphasis}{SlateGrey}
 \colorlet{body}{LightGrey}
 
-% Change some fonts, if necessary
 \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
 \renewcommand{\personalinfofont}{\footnotesize}
 \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
 \renewcommand{\cvsubsectionfont}{\large\bfseries}
 
-
-% Change the bullets for itemize and rating marker
-% for \cvskill if you want to
 \renewcommand{\itemmarker}{{\small\textbullet}}
 \renewcommand{\ratingmarker}{\faCircle}
 
-%% Use (and optionally edit if necessary) this .cfg if you
-%% want to use an author-year reference style like APA(6)
-%% for your publication list
-%\input{pubs-authoryear.cfg}
-
-%% Use (and optionally edit if necessary) this .cfg if you
-%% want an originally numerical reference style like IEEE
-%% for your publication list
+% Publications
 \input{pubs-num.cfg}
-
-%% sample.bib contains your publications
 \addbibresource{sample.bib}
 
-% badetitou command
-\newcommand{\rmod}{Inria RMoD}
-\newcommand{\bl}{Berger-Levrault}
+\newcommand*\leftright[3]{%
+  \leavevmode
+  \rlap{#2}%
+  \hspace{#1}%
+  #3}
+
+% Toggle version longue
+\newif\iflongcv
+\longcvtrue % <-- mettre \longcvfalse pour n'afficher QUE le CV court
 
 \begin{document}
+
 \name{Benoit Verhaeghe, Ph.D.}
-\tagline{Leading Advanced Software Engineering Innovations}
-%% You can add multiple photos on the left or right
+\tagline{Leader technique | IA pour le code | Modernisation logicielle | GreenIT / Numérique responsable}
 \photoR{2.8cm}{profil}
 
 \personalinfo{%
-  % Not all of these are required!
   \email{work@badetitou.fr}
   \phone{+33 6 58 33 53 74}
-  \mailaddress{4, rue de la Moselle}
-  \location{38100 Grenoble, FRANCE}
+  % \mailaddress{4, rue de la Moselle} % Optionnel
+  \location{Grenoble, France}
   \homepage{badetitou.fr}
   \linkedin{benoitverhaeghe}
   \github{badetitou}
@@ -90,463 +77,302 @@
 }
 
 \makecvheader
-%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
-% \AtBeginEnvironment{itemize}{\small}
 
-%% Set the left/right column width ratio to 6:4.
-\columnratio{0.6}
-
-% Start a 2-column paracol. Both the left and right columns will automatically
-% break across pages if things get too long.
+\columnratio{0.62}
 \begin{paracol}{2}
 
-\cvsection{Experiences}
+% =========================
+% COLONNE GAUCHE
+% =========================
 
-\cvevent{Responsable de projets scientifiques}{Berger-Levrault}{janv. 2024 - aujourd'hui}{Lyon, FRANCE}
+\cvsection{Profil}
 
-Gestion de projets de recherche et développement sur :
+Docteur en génie logiciel, à l’interface entre \textbf{recherche appliquée} et \textbf{déploiement industriel}. Je pilote des initiatives autour de l’\textbf{IA pour le développement}, de la \textbf{modernisation de logiciels à grande échelle} (ex.\ \textbf{1M+ lignes de code}), et de la \textbf{mesure GreenIT}. Mainteneur open-source d’une extension VS Code (\textbf{4\,000+} installations).
+
+\smallskip
+
+\cvsection{Expérience}
+
+\cvevent{Chef de projet scientifique / Responsable R\&D}{Berger-Levrault}{janv. 2024 -- présent}{Lyon, France}
 \begin{itemize}
-\item \textbf{IA pour le code} : Intégration de l’IA dans les Merge Requests et les IDE ; utilisation de MCP et des fonctionnalités de tool-calling ; intégration de nouveaux tool-calling dans les IDE ; mesure de l’impact réel sur les équipes de production
-\item \textbf{GreenIT} : Mesure de la consommation énergétique de l’infrastructure et du code
-\item \textbf{Cartographie de l'architecture logiciel} : Représentation du code sous forme de cartes pour comprendre, planifier et moderniser des applications à très grande échelle
-\end{itemize}
-
-Gestion d’une équipe de 5 chercheurs et ingénieurs ainsi que de plusieurs doctorants
-Planification de la feuille de route à long terme de l’équipe et pilotage de la collaboration avec plusieurs laboratoires de recherche (Inria) et unités industrielles.
-
-\divider
-
-\cvevent{Ingénieur R\&D}{Berger-Levrault}{Novembre 2021 -- Décembre 2023}{Lyon, France}
-
-\begin{itemize}
-  \item Automatisation de la migration d’applications Java (GWT et Swing) de plus d’un million de lignes de code vers Angular
-  \item Encadrement de doctorants et de stagiaires
-  \item Rédaction de publications scientifiques
+  \item Management d’une \textbf{équipe de 6} ingénieurs et chercheurs ; encadrement de stagiaires et doctorants.
+  \item Définition de la feuille de route R\&D et coordination des collaborations avec \textbf{Inria} et les unités produit/industrie.
+  \item Conception et pilotage d’études mixtes (qualitatives + quantitatives) pour mesurer l’impact sur la \textbf{productivité des développeurs}.
+  \item Pilotage d’initiatives \textbf{IA pour le code} (IDE \& workflows de merge requests) : intégration MCP / tool-calling et mesure d’impact en conditions réelles.
+  \item Lancement et pilotage de la mesure \textbf{GreenIT} (infrastructure + application/code) et accompagnement de la modernisation via la \textbf{cartographie logicielle}.
 \end{itemize}
 
 \divider
 
-\cvevent{Doctorant Génie Logiciel}{Inria RMoD -- Berger-Levrault}{Janvier 2019 -- Octobre 2021}{Montpellier/Lille, FRANCE}
+\cvevent{Ingénieur logiciel R\&D}{Berger-Levrault}{nov. 2021 -- déc. 2023}{Lyon, France}
 \begin{itemize}
-  \item Migration d'applications GWT vers Angular
-  \item Mise en place d'architecture hybride
-  \item Écriture de papiers de recherche
-  \item Enseignements
+  \item Contribution à la modernisation de front-ends Java (GWT/Swing, \textbf{1M+ LOC}) vers \textbf{Angular}.
+  \item Mise en place de stratégies de migration incrémentales (architectures hybrides) pour réduire les risques de delivery.
+  \item Encadrement de doctorants et stagiaires ; co-publications ; transfert technologique et partenariats académiques.
 \end{itemize}
 
 \divider
 
-\cvevent{Ingénieur Logiciel}{Berger-Levrault}{Mars 2018 -- Décembre 2018}{Montpellier, FRANCE}
-
-\divider
-
-\cvevent{Etudiant-Chercheur}{Inria RMoD}{Mai -- Septembre 2017}{Villeneuve d'Ascq, France}
-
-
-\cvsection{Projets}
-
-\cvevent{Pharo Language Server}{Personnel}{Décembre 2020 -- Aujourd'hui}{Grenoble, FRANCE}
+\cvevent{Ingénieur logiciel doctorant (doctorat industriel)}{Inria RMoD / Berger-Levrault}{mars 2018 -- oct. 2021}{Montpellier \& Lille, France}
 \begin{itemize}
-\item Connecter Pharo avec VSCode
-\item +33 étoiles GitHub, +4000 téléchargements
+  \item Conception d’outils de migration d’interfaces (GUI) de \textbf{GWT} vers \textbf{Angular} via \textbf{l’ingénierie dirigée par les modèles (IDM/MDE)}.
+  \item Analyses d’architecture pour soutenir la planification et la modernisation.
+  \item Enseignement et publications dans des conférences/journaux de génie logiciel.
+\end{itemize}
+
+\cvsection{Projets sélectionnés}
+
+\cvevent{Extension VS Code --- Support du langage Pharo}{Open-source (projet personnel)}{déc. 2020 -- présent}{}
+\begin{itemize}
+  \item Expérience développeur Pharo complète dans VS Code : support langage, débogage et notebooks.
+  \item Intégration de fonctionnalités d’assistance par IA pour les workflows Pharo.
+  \item \textbf{4\,000+} installations sur la marketplace VS Code.
 \end{itemize}
 
 \divider
 
-\cvevent{Pharo LibVLC}{Personnel}{Décembre 2020 -- Aujourd'hui}{Lille, FRANCE}
-
+\cvevent{Casino --- Plateforme de migration GUI}{Inria RMoD / Berger-Levrault}{mars 2018 -- déc. 2023}{}
 \begin{itemize}
-\item Connecter Pharo avec VLC
-\item Utilisation de librairie partagé et appel FFI
+  \item Migration automatique d’interfaces applicatives ; livraison de \textbf{6 importeurs} et \textbf{5 exporteurs}.
 \end{itemize}
 
-\divider
-
-\cvevent{Casino}{Inria RMoD}{Février 2018 -- Décembre 2023}{Lille, FRANCE}
-
-\begin{itemize}
-\item Outil utilisant l'IDM permettant la migration d'application
-\end{itemize}
-  
+% =========================
+% COLONNE DROITE
+% =========================
 \switchcolumn
 
-\cvsection{Succès}
+\cvsection{Prix \& distinctions}
 
-\cvachievement{\faTrophy}{Prix Science Ouverte de la Thèse}{Mes travaux de thèse ont été récompensés par le \href{https://www.enseignementsup-recherche.gouv.fr/fr/remise-des-premiers-prix-science-ouverte-de-la-these-97810}{\color{blue}\underline{Prix Science Ouverte}} par le Ministère de l'enseignement supérieur et de la recherche }
-
+\cvachievement{\faTrophy}{Prix Science ouverte de la thèse}{Thèse récompensée par le \href{https://www.enseignementsup-recherche.gouv.fr/fr/remise-des-premiers-prix-science-ouverte-de-la-these-97810}{Prix Science ouverte de la thèse} (Ministère de l’Enseignement supérieur et de la Recherche).}
 \divider
 
-\cvachievement{\faTrophy}{3ème place Innovation Award}{
-\href{https://marketplace.visualstudio.com/items?itemName=badetitou.pharo-language-server}{\color{blue}\underline{Pharo Language Server}} est arrivé troisième à l’Innovation Award de ESUG2022}
-
+\cvachievement{\faTrophy}{Prix Innovation (ESUG 2022) --- 3e place}{\href{https://marketplace.visualstudio.com/items?itemName=badetitou.pharo-language-server}{Pharo Language Server} élu 3e au Prix Innovation ESUG 2022.}
 \divider
 
-
-\cvachievement{\faTrophy}{Best Paper Award}{Migrating GWT to Angular 6 using MDE @ Sattose}
-
+\cvachievement{\faTrophy}{Best Paper Award}{Migrating GWT to Angular 6 using MDE @ Sattose.}
 \divider
 
-\cvachievement{\faTrophy}{2ème place Innovation Award}{\href{https://badetitou.fr/projects/SmartTest/}{\color{blue}\underline{SmartTest}} est arrivé deuxième à l’Innovation Award de ESUG2017}
-
-% \divider
-
-% \cvachievement{\faTrophy}{2ème place Nuit de l’Info}{J’étais responsable d’une équipe durant la Nuit de l’Info 2016}
-
-% \divider
-
-% \cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
+\cvachievement{\faTrophy}{Prix Innovation (ESUG 2017) --- 2e place}{\href{https://badetitou.fr/projects/SmartTest/}{SmartTest} élu 2e au Prix Innovation ESUG 2017.}
 
 \cvsection{Compétences}
 
+\textbf{Domaines clés}\par
+\cvtag{Architecture logicielle}
+\cvtag{Modernisation}
+\cvtag{Reverse engineering}
+\cvtag{IDM/MDE}\par
+\divider
+
+\textbf{IA \& mesure}\par
+\cvtag{IA pour le code}
+\cvtag{Productivité dev}
+\cvtag{Évaluation d’outils}
+\cvtag{GreenIT}\par
+\divider
+
+\textbf{Langages \& outils}\par
 \cvtag{Pharo}
-\cvtag{MDE}
 \cvtag{Java}
 \cvtag{Angular}
-\cvtag{REST}
-\divider
-
-\cvtag{Optimisation}
-\cvtag{Test Driven Development}
-\cvtag{Analyse Architecture Logiciel}
-
-\divider
-
+\cvtag{TypeScript}
+\cvtag{REST}\par
 \cvtag{Git}
 \cvtag{Jenkins}
-\cvtag{GitHub / GitLab CI/CD}
-
+\cvtag{GitHub/GitLab CI/CD}\par
 \divider
 
+\textbf{Leadership}\par
+\cvtag{Pilotage projet}
+\cvtag{Collaboration}
+\cvtag{Mentorat}
 \cvtag{Communication}
-\cvtag{Gestion de projet}
-
-\cvsection{Formation}
-
-\cvevent{Ph.D. en Génie Logiciel}{Université de Lille -- Inria / Berger-Levrault}{Janvier 2019 -- Octobre 2021}{}
-
-Support à la migration d'applications GWT vers Angular
-
-
-\divider
-
-\cvevent{Ingénieur Informatique et Statistique}{Polytech Lille}{Septembre 2015 -- Juillet 2018}{}
-Formation centrée sur le le génie logiciel et les analyses statistiques (Data analyze).
-
-
-\divider
-
-\cvevent{DUT Informatique}{IUT A - Université de Lille}{Sept 2014 -- Juin 2015}{}
 
 \cvsection{Langues}
 
-\cvskilltext{Français}{Langue maternelle}
+\leftright{5em}{\textbf{Français}}{Langue maternelle}
 
 \divider
 
-\cvskilltext{Anglais}{Ecrit et parlé}
+\leftright{5em}{\textbf{Anglais}}{Courant}
 
-\cvsection{Hobbies}
-
-\cvtag{Jeux de sociétés}
-\cvtag{Contributeur Open-Source}
-
-\end{paracol}
-
-\newpage
-
-\cvsection{Long CV}
-
-\cvsection{Experiences}
-
-\cvevent{Responsable de projets scientifiques}{Berger-Levrault}{janv. 2024 - aujourd'hui}{Lyon, FRANCE}
-
-
-Gestion de projets de recherche et développement sur :
-\begin{itemize}
-\item \textbf{IA pour le code} : Intégration de l’IA dans les Merge Requests et les IDE ; utilisation de MCP et des fonctionnalités de tool-calling ; intégration de nouveaux tool-calling dans les IDE ; mesure de l’impact réel sur les équipes de production
-\item \textbf{GreenIT} : Mesure de la consommation énergétique de l’infrastructure et du code
-\item \textbf{Cartographie de l'architecture logiciel} : Représentation du code sous forme de cartes pour comprendre, planifier et moderniser des applications à très grande échelle
-\end{itemize}
-
-Gestion d’une équipe de 5 chercheurs et ingénieurs ainsi que de plusieurs doctorants.
-Encadrement de thèse sur: \textbf{Selection de tests} ; \textbf{Generation de tests} ; \textbf{Microservicisation d'application} ; \textbf{localisation de code métier}.
-
-Planification de la feuille de route à long terme de l’équipe et pilotage de la collaboration avec plusieurs laboratoires de recherche (Inria) et unités industrielles.
-
-\divider
-
-\cvevent{Ingénieur de Recherche -- Ph.D.}{Berger-Levrault}{Novembre 2021 -- Décembre 2023}{Lyon, FRANCE}
-\begin{itemize}
-  \item Migration d'applications (Projets Casino -- IDM)
-  \item Analyse de la qualité des applications de l'entreprise (Moose/IDM)
-  \item Encadrement de doctorants et de stagiaires
-  \item Écriture de papiers de recherche
-  \item Suivi du contrat cadre signé entre Berger-Levrault et Inria
-\end{itemize}
-
-Suite à ma thèse, l'entreprise Berger-Levrault et l'Inria ont signé un contrat cadre (\href{https://www.inria.fr/fr/berger-levrault-inria-partenariat-numerique-responsable}{\color{blue}\underline{post inria}}).
-Je suis donc resté en poste à Berger-Levrault en tant qu'ingénieur de recherche afin de poursuivre les travaux de migration de logiciel, et d'encadrer les doctorants qui découlent de ce contrat cadre.
-J'ai aussi lancer en interne un projet d'analyse des logiciels de l'entreprise en utilisant la plateforme de méta-modèlisation Moose.
-
-\divider
-
-\cvevent{Doctorant Génie Logiciel}{Inria RMoD -- Berger-Levrault}{Janvier 2019 -- Octobre 2021}{Montpellier/Lille, FRANCE}
-\begin{itemize}
-\item Migration d'applications GWT vers Angular
-\item Mise en place d'architecture hybride
-\item Écriture de papiers de recherche
-\item Enseignements
-\item Écriture de blog post sur la platforme Moose
-\begin{itemize}
-  \item \url{https://modularmoose.org/blog/authors/benoit-verhaeghe/}
-\end{itemize}
-
-\end{itemize}
-
-\divider
-
-\cvevent{Ingénieur Logiciel}{Berger-Levrault}{Mars 2018 -- Décembre 2018}{Montpellier, FRANCE}
-\begin{itemize}
-\item Analyse de l’architecture des applications de Berger-Levrault
-\item Développement d'outils pour la migration de GWT vers Angular
-\end{itemize}
-
-\divider
-
-\cvevent{Etudiant-Chercheur}{Inria RMoD}{Mai -- Septembre 2017}{Villeneuve d'Ascq, France}
-\begin{itemize}
-  \item Développement en Pharo d'un "espion" (\href{https://badetitou.fr/projects/TUA/}{\color{blue}\underline{TestsUsageAnalyser}})
-  \item Ecriture d'un article scientifique pour l'IWST
-  \item Développement d'un outil de sélection de tests (\href{https://badetitou.fr/projects/SmartTest/}{\color{blue}\underline{SmartTest}})
-\end{itemize}
-
-\divider
-
-\cvevent{Developpeur Informatique}{University of Emden,  Departement Computer Science}{Avril -- Juillet 2015}{Emden, Allemagne}
-\begin{itemize}
-  \item Développement de l'application "Factory Interface" permettant d'utiliser le protocol OPC-UA depuis une application Java
-\end{itemize}
-
-\newpage
-
-\cvsection{Projets}
-
-\cvevent{Pharo Language Server}{Projet personnel}{Décembre 2020 -- Aujourd'hui}{Grenoble, FRANCE}
-\begin{itemize}
-\item Connecter Pharo avec VSCode
-\item +33 étoiles GitHub
-\end{itemize}
-
-\divider
-
-\cvevent{Casino}{Inria RMoD -- Berger-Levrault}{Février 2018 -- 2023}{Lille, FRANCE}
-
-Casino est l'outil que j'ai développé pendant ma thèse et dont l'objectif est de faciliter la migration des front-ends d'application.
-L'outil est composé d'un méta-modèle, de plusieurs importeurs et plusieurs exporteurs.
-Il est disponible sur GitHub.
-
-\divider
-
-\cvevent{Pharo LibVLC }{Projet personnel}{}{}
-
-\href{https://github.com/badetitou/Pharo-LibVLC}
-{\color{blue}\underline{Pharo LibVLC}} est un binding FFI de la librairie de VLC avec Pharo.
-
-
-\divider
-
-\cvevent{SmartTest}{Inria RMoD}{Juillet 2017 -- 2019}{Lille, FRANCE}
-\begin{itemize}
-\item Sélection de tests automatiques (Pharo)
-\item Développement de différentes stratégies d’exécution de test (Pharo)
-\end{itemize}
-
-\divider
-
-\cvevent{TestsUsageAnalyser}{Inria RMoD}{Avril -- Aout 2017}{Lille, FRANCE}
-\begin{itemize}
-  \item Espion collecteur de données
-\end{itemize}
-  
-
-% \medskip
-
-% \cvsection{A Day of My Life}
-
-% % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
-% % \wheelchart{outer radius}{inner radius}{
-% % comma-separated list of value/text width/color/detail}
-% \wheelchart{1.5cm}{0.5cm}{%
-%   6/8em/accent!30/{Sleep,\\beautiful sleep},
-%   3/8em/accent!40/Hopeful novelist by night,
-%   8/8em/accent!60/Daytime job,
-%   2/10em/accent/Sports and relaxation,
-%   5/6em/accent!20/Spending time with family
-% }
-
-% use ONLY \newpage if you want to force a page break for
-% ONLY the current column
-
-
-%% Switch to the right column. This will now automatically move to the second
-%% page if the content is too long.
-% \switchcolumn
-
-% \cvsection{My Life Philosophy}
-
-% \begin{quote}
-% ``Something smart or heartfelt, preferably in one sentence.''
-% \end{quote}
-
-\cvsection{Enseignements}
-
-\teachingevent{Architectures Logicielles}{Polytech'Lille}{2019 -- 2021}{Lille, FRANCE}{75h}
-
-\begin{itemize}
-\item 2ème année d'école d'ingénieur (Master 1)
-\end{itemize}
-
-J'ai encadré pendant trois ans des étudiants pendant les TPs d'architecture logicielles de Polytech'Lille.
-Puis j'ai suivi des groupes d'étudiants pendant leurs projets d'architectures logicielles.
-L'objectif de cet enseignement était de faire découvrir les architectures 3-tiers.
-
-\divider
-
-\teachingevent{Structures de données}{Polytech'Lille}{2019}{Lille, FRANCE}{12h}
-\begin{itemize}
-\item 1er année d'école d'ingénieur (Licence 3)
-\end{itemize}
-
-J'ai enseigné les TPs de structures de données à Polytech'Lille aux étudiants de première années du cycle ingénieur.
-L'objectif était de faire développer et manipuler les structures de données en C.
-En cas d'exemple, nous avons aussi demandé aux étudiants d'utiliser les structures de données afin de résoudre des problèmes venus de la thèorie des graphes.
-
-\divider
-\pagebreak
-
-\teachingevent{Système d'exploitation}{Universit\'e de Montpellier}{2020}{Montpellier, FRANCE}{40h}
-\begin{itemize}
-  \item Licence 2
-  \item Support : \url{https://badetitou.fr/teaching/mtp/HLIN303/}
-\end{itemize}
-J'ai encadré une trentaine d'étudiants pendant dix séances TPs de 4 heures pour les accompagner dans les apprentissages liés au système d'exploitation.
-Ces enseignements visés à enseigner les languages de programmation C et Python.
-En particulier, l'objectif était de faire comprendre le fonctionnement de la compilation séparée,
-les différentes structures de données
-et du fonctionnement du système d'entrées / sorties d'une application.
-
-
-\divider
-
-\teachingevent{Evolution et restructuration de logiciels}{Universit\'e de Montpellier}{2019 -- 2020}{Montpellier, FRANCE}{16h}
-
-\begin{itemize}
-\item Master 2
-\item Support TP : \url{https://badetitou.fr/teaching/mtp/VisuRCA/}
-\end{itemize}
-
-J'ai enseigné durant ce cours à des étudiants de Master 2 de l'université de Montpellier.
-Pour cet enseignement, j'ai dû concevoir le cours, le TP et le TD.
-Les étudiants ont pu découvrir le language de programmation Pharo, la plateforme d'analyse Moose ainsi que l'utilisation des modèles et méta-modèles afin d'extraire de l'information à partir du code d'un logiciel qu'ils ne connaissaient pas.
-
-\divider
-
-\teachingevent{Fondamentaux architectures et systèmes d’exploitation}{Polytech'Montpellier}{2020}{Montpellier, FRANCE}{2h}
-
-\begin{itemize}
-\item 1ère année d'école d'ingénieur (Licence 3)
-\end{itemize}
-
-J'ai donné un cours sur le fonctionnement des processus sur Linux.
-En particulier, leurs fonctionnements, comment utiliser les \textit{fork}, lister les processus, et envoyer des signaux aux processus en utilisant Python.
-
-\divider
-
-\teachingevent{Architectures et Systèmes appliqués à l’IOT}{Polytech'Montpellier}{2020}{Montpellier, FRANCE}{17h}
-
-\begin{itemize}
-  \item 1ère année d'école d'ingénieur (Licence 3)
-\end{itemize}
-
-Durant cet enseignement, j'ai encadré des étudiants pendant leurs découvertes de la programmation Python pour controler un Arduino.
-J'ai fait l'enseignement des TPs, le suivi de projet et enfin l'évaluation des projets.
-
-%% Yeah I didn't spend too much time making all the
-%% spacing consistent... sorry. Use \smallskip, \medskip,
-%% \bigskip, \vspace etc to make adjustments.
 \medskip
 
 \cvsection{Formation}
 
-\cvevent{Ph.D. en Génie Logiciel}{Université de Lille -- Inria / Berger-Levrault}{Janvier 2019 -- Octobre 2021}{}
-Support à la migration d'applications GWT vers Angular
+\cvevent{Doctorat en génie logiciel}{Université de Lille / Berger-Levrault}{janv. 2019 -- oct. 2021}{}
+Approche incrémentale de migration d’IHM applicatives via des métamodèles
 
-\textbf{Encadrement Académique :}\\
-Nicolas Anquetil -- Professeur Associé -- Université de Lille\\
-Anne Etien -- Professeure -- Université de Lille\\
-\textbf{Encadrement Industriel :} Abderrahmane Seriai -- Berger-Levrault
+\divider
 
+\cvevent{Diplôme d’ingénieur (Génie logiciel \& Statistiques)}{Polytech Lille}{sept. 2015 -- juil. 2018}{}
+
+\divider
+
+\cvevent{DUT Informatique}{IUT A -- Université de Lille}{sept. 2014 -- juin 2015}{}
+
+\cvsection{Centres d’intérêt}
+\cvtag{Jeux de société}
+\cvtag{Open-source}
+
+\end{paracol}
+
+% =========================
+% VERSION DÉTAILLÉE (optionnelle)
+% =========================
+\iflongcv
+\newpage
+
+\cvsection{CV détaillé}
+
+\cvsection{Expérience}
+
+\cvevent{Chef de projet scientifique / Responsable R\&D}{Berger-Levrault}{janv. 2024 -- présent}{Lyon, France}
+
+\textbf{Périmètre :} programmes R\&D à l’interface industrie / recherche, centrés sur l’IA pour le génie logiciel, la mesure, et la modernisation.
+
+\begin{itemize}
+\item \textbf{Études productivité développeur :} définition des protocoles, analyses qualitatives et quantitatives, restitution actionnable aux équipes d’ingénierie.
+\item \textbf{IA pour le code :} intégration de capacités IA dans les merge requests et les IDE ; exploration des patterns MCP / tool-calling ; évaluation d’impact en environnement de production.
+\item \textbf{GreenIT / numérique responsable :} mesure de la consommation énergétique de l’infrastructure et de l’application/code ; appui à l’éco-conception.
+\item \textbf{Cartographie logicielle \& analyse d’architecture :} modélisation et cartographie pour comprendre et moderniser des applications à très grande échelle.
+\end{itemize}
+
+Management d’une \textbf{équipe de 6} ingénieurs et chercheurs, et encadrement de plusieurs doctorants.
+
+Encadrement de thèses sur : \textbf{sélection de tests}, \textbf{génération de tests}, \textbf{architecture microservices}, \textbf{localisation de code métier}.
+
+Définition de la feuille de route long-terme et coordination des collaborations avec \textbf{plusieurs laboratoires (Inria)} et unités industrielles.
+
+\divider
+
+\cvevent{Ingénieur logiciel R\&D}{Berger-Levrault}{nov. 2021 -- déc. 2023}{Lyon, France}
+\begin{itemize}
+  \item Modernisation de front-ends legacy vers \textbf{Angular} (projet Casino ; approche IDM/MDE).
+  \item \textbf{Analyse d’architecture} et \textbf{qualité de code} pour orienter les décisions de modernisation.
+  \item Encadrement de doctorants et stagiaires ; publications et transfert technologique.
+  \item Suivi et animation de partenariats académiques.
+\end{itemize}
+
+À l’issue de la thèse, Berger-Levrault et Inria ont signé un accord de partenariat :
+\href{https://www.inria.fr/fr/berger-levrault-inria-partenariat-numerique-responsable}{post Inria}.
+J’ai poursuivi chez Berger-Levrault afin de prolonger les travaux de modernisation, accompagner le partenariat et lancer des initiatives internes d’analyse logicielle avec la plateforme Moose.
+
+\divider
+
+\cvevent{Ingénieur logiciel doctorant (doctorat industriel)}{Berger-Levrault / Inria RMoD}{janv. 2019 -- oct. 2021}{Montpellier \& Lille, France}
+\begin{itemize}
+  \item Migration d’applications Java (\textbf{GWT} et \textbf{Swing}, \textbf{1M+ LOC}) vers \textbf{Angular}.
+  \item Mise en place d’une architecture hybride (GWT + Angular) pour une migration incrémentale.
+  \item Publications et enseignement.
+  \item Blog sur Moose : \url{https://modularmoose.org/blog/authors/benoit-verhaeghe/}
+\end{itemize}
+
+\divider
+
+\cvevent{Ingénieur logiciel R\&D}{Berger-Levrault}{mars 2018 -- déc. 2018}{Montpellier, France}
+\begin{itemize}
+  \item Création d’outils de migration d’applications GWT vers Angular.
+  \item Méta-modélisation, analyse de code, et état de l’art.
+\end{itemize}
+
+\divider
+
+\cvevent{Stage de recherche}{Inria RMoD}{mai -- sept. 2017}{Villeneuve d’Ascq, France}
+\begin{itemize}
+  \item Apprentissage de Pharo et de l’écosystème ; étude des approches de sélection de tests.
+  \item Développement d’un outil de sélection automatique de tests et validation avec la communauté Pharo.
+  \item Contribution à l’intégration dans le core Pharo ; rédaction de papiers de recherche.
+\end{itemize}
+
+\divider
+
+\cvevent{Développeur logiciel}{University of Emden (Département Informatique)}{avr. -- juil. 2015}{Emden, Allemagne}
+\begin{itemize}
+  \item Développement d’une application Java utilisant le protocole OPC-UA.
+\end{itemize}
+
+\cvsection{Projets}
+
+\cvevent{Extension VS Code --- Support du langage Pharo}{Open-source (projet personnel)}{déc. 2020 -- présent}{}
+\begin{itemize}
+  \item Écriture et débogage de code Pharo dans VS Code ; usage orienté notebooks.
+  \item Fonctionnalités d’assistance par IA intégrées dans l’écosystème.
+  \item \textbf{4\,000+} installations sur la marketplace VS Code.
+\end{itemize}
+
+\divider
+
+\cvevent{Casino --- Plateforme de migration GUI}{Inria RMoD / Berger-Levrault}{mars 2018 -- déc. 2023}{}
+\begin{itemize}
+  \item Migration automatique d’IHM applicatives.
+  \item Livraison de \textbf{6 importeurs} et \textbf{5 exporteurs}.
+\end{itemize}
+
+\divider
+
+\cvevent{Pharo LibVLC}{Open-source (projet personnel)}{}{}
+\href{https://github.com/badetitou/Pharo-LibVLC}{Pharo LibVLC} : binding FFI de la bibliothèque VLC pour Pharo.
+
+\divider
+
+\cvevent{SmartTest}{Inria RMoD}{juil. 2017 -- juil. 2018}{Lille, France}
+\begin{itemize}
+  \item Sélection automatique de tests dans Pharo.
+  \item Développement de différentes stratégies d’exécution de tests.
+\end{itemize}
+
+\cvsection{Enseignement}
+
+\cvevent{Architecture logicielle}{Polytech Lille}{2019 -- 2021}{France}
+
+\divider
+
+\cvevent{Évolution logicielle \& méta-modélisation}{Université de Montpellier}{2019 -- 2021}{Montpellier, France}
+
+\divider
+
+\cvevent{Algorithmique de base}{Université de Montpellier}{2019 -- 2021}{Montpellier, France}
+
+\cvsection{Formation}
+
+\cvevent{Doctorat en génie logiciel}{Université de Lille / Berger-Levrault}{janv. 2019 -- oct. 2021}{}
+Approche incrémentale de migration d’IHM applicatives via des métamodèles
+
+\textbf{Encadrants académiques :}\\
+Nicolas Anquetil -- Maître de conférences -- Université de Lille\\
+Anne Etien -- Professeure des universités -- Université de Lille\\
+\textbf{Encadrant industriel :} Abderrahmane Seriai -- Berger-Levrault
 
 \textbf{Rapporteurs :}\\
-Salah Sadou -- Professeur -- Université Bretagne Sud\\
-Jean-Rémy Falleri -- Professeur Associé -- Université de Bordeaux Sud\\
+Salah Sadou -- Professeur des universités -- Université Bretagne Sud\\
+Jean-Rémy Falleri -- Maître de conférences -- Université de Bordeaux
 
-\textbf{Président du jury :}\\
-Franck Barbier -- Professeur -- Université de Pau et des Pays de l’Adour
-
-
-\divider
-
-\pagebreak
-\cvevent{Ingénieur Informatique et Statistique}{Polytech Lille}{Septembre 2015 -- Juillet 2018}{}
-
-\textbf{Projet de fin d'étude :} Migration : GWT to Angular\\
-\textbf{Encadrement :} Anne Etien, Nicolas Anquetil, Laurent Deruelle et Abderrahmane Seriai
+\textbf{Président :}\\
+Franck Barbier -- Professeur des universités -- Université de Pau et des Pays de l’Adour
 
 \divider
 
-\cvevent{DUT Informatique}{IUT A - Université de Lille}{Sept 2014 -- Juin 2015}{}
+\cvevent{Diplôme d’ingénieur (Génie logiciel \& Statistiques)}{Polytech Lille}{sept. 2015 -- juil. 2018}{}
+\textbf{Encadrants :} Anne Etien, Nicolas Anquetil, Laurent Deruelle, Abderrahmane Seriai
 
-% \divider
+\divider
 
-% \cvevent{Archlinux Pharo Launcher}{}{}{}
-
-% \divider
-
-% \cvevent{Tennis de table -- Trésorier}{Lezennes, FRANCE}{2016 -- 2018}{}
-
-
-
-% \cvsection{Referees}
-
-% % \cvref{name}{email}{mailing address}
-% \cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
-% {Address Line 1\\Address line 2}
-
-% \divider
-
-% \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
-% {Address Line 1\\Address line 2}
-
-
+\cvevent{DUT Informatique}{IUT A -- Université de Lille}{sept. 2014 -- juin 2015}{}
 
 \cvsection{Publications}
 
 \nocite{*}
 
-% \printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
-
-% \divider
-
-\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}},type=article]
+\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Articles de revue}},type=article]
 
 \divider
 
-\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
+\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Actes de conférence}},type=inproceedings]
 
 \divider
 
-\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{PhD thesis}},type=thesis]
+\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Thèse}},type=thesis]
 
+\fi % fin toggle version longue
 
 \end{document}
