@@ -29,3 +29,5 @@ mmayer.log
 mmayer.out
 mmayer.pdf
 mmayer.run.xml
+out/
+.DS_Store
