@@ -315,6 +315,16 @@
   \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
 }
 
+\newcommand{\cvtaggroup}[2]{%
+  {\color{emphasis}\textbf{#1}}\par
+  \smallskip
+  \begingroup
+  \setlength{\parskip}{0.5\baselineskip}%
+  #2\par
+  \endgroup
+  \smallskip
+}
+
 % v1.6: Use accsupp so that the actual numeric value is copied/pasted
 %       and also support 0.5, 1.5, 2.5, 3.5, 4.5
 \newcommand{\cvskill}[2]{%
