@@ -31,7 +31,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           # The root LaTeX file to be compiled
-          root_file: sample.tex
+          root_file: CV-Benoit-Verhaeghe-FR.tex
           # The working directory for the latex compiler to be invoked
           working_directory: . # optional
           # LaTeX engine to be used
@@ -43,7 +43,7 @@ jobs:
 
                         
       - name: Rename pdf
-        run: cp ./out/sample.pdf ./cv.pdf
+        run: cp ./out/CV-Benoit-Verhaeghe-FR.pdf ./cv.pdf
       
       - name: Create empty changelog
         run: |
